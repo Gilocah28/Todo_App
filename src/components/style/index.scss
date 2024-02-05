@@ -1,0 +1,24 @@
+@import '../style/variable';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $FFamily;
+    font-size: $FSize;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+
+    .light{
+        background: $VeryLightGrayishBlue;
+        color: $VeryDarkBlue;
+    }
+
+    .dark{
+        background: $VeryDarkBlue;
+        color: white;
+    }
+}
