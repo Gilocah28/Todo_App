@@ -1,24 +1,58 @@
 @import '../style/variable';
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: $FFamily;
     font-size: $FSize;
 }
-body{
+
+body {
     min-height: 100vh;
     width: 100%;
 
-    .light{
-        background: $VeryLightGrayishBlue;
+   
+
+    .light {
+        background: $VeryLightGray;
         color: $VeryDarkBlue;
+
+        .input-container {
+            background: $VeryLightGray;
+            box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.49);
+
+            input {
+                background: transparent;
+                color: $VeryDarkBlue;
+            }
+
+            button {
+                background: transparent;
+                outline: none;
+                border: 1px solid $VeryDarkDesaturatedBlue;
+            }
+        }
     }
 
-    .dark{
+    .dark {
         background: $VeryDarkBlue;
-        color: white;
+        color: $LightGrayishBlue;
+
+        .input-container {
+            background: $VeryDarkDesaturatedBlue;
+
+            input {
+                background: transparent;
+                color: $LightGrayishBlue;
+            }
+
+            button {
+                background: transparent;
+                outline: none;
+                border: 1px solid $LightGrayishBlue;
+            }
+        }
     }
 }

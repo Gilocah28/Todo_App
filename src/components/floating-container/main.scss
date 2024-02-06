@@ -1,22 +1,67 @@
-.main-container{
+.main-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    border: 1px solid wheat;
+    transform: translate(-50%, -50%);
     width: 100%;
     max-width: 500px;
+    p{
+        text-align: center;
+        margin-top: .5rem;
+        color: rgba(201, 66, 66, 0.863);
+    }
 
 
-    .logo{
+    .logo {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        
-        button{
+
+        button {
             outline: none;
             background: transparent;
             border: none;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    .input-container {
+        margin-top: 1.5rem;
+        padding: .3rem 1rem;
+        border-radius: 5px;
+        form {
+            display: flex;
+            gap: .7rem;
+            align-items: center;
+            
+            input{
+                padding: 1rem;
+                width: 100%;
+                border: none;
+                outline: none;
+                font-weight: 700;
+                font-size: 1rem;
+            }
+
+            button{
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+
+                &:hover{
+                    transition: all 300ms linear;
+                    background-image: url(../../assets/icon-check.svg);
+                    background-position: center;
+                    background-repeat: no-repeat; 
+                    background-color: rgba(225, 46, 231, 0.493);
+                    border: none;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }

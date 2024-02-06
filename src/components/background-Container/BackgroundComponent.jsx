@@ -11,7 +11,7 @@ const BackgroundComponent = () => {
   const { theme } = useContext(DataContext)
   
   return (
-    <div>
+    <div className='image-source'>
       <picture>
         <source media='(max-width:600px)' srcSet={theme ? bgLightMobile : bgDarkMobile} />
         <img className='img-source' src={theme ? bgLight : bgDark} alt="Background-image" />
