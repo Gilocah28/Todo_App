@@ -3,6 +3,7 @@ import '../floating-container/main.scss'
 import sun from '../../assets/icon-sun.svg'
 import moon from '../../assets/icon-moon.svg'
 import DataContext from '../context/DataContext'
+import TaskListComponent from './taskList/TaskListComponent'
 
 const MainComponent = () => {
 
@@ -55,9 +56,9 @@ const MainComponent = () => {
             onChange={(event) => setTask(event.target.value)}
           />
         </form>
-
-
       </div>
+
+      <TaskListComponent />
 
 
 
