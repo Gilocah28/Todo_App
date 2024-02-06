@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../floating-container/main.scss'
 import sun from '../../assets/icon-sun.svg'
 import moon from '../../assets/icon-moon.svg'
@@ -10,8 +10,15 @@ const MainComponent = () => {
   const { theme, handleToggle } = useContext(DataContext)
 
   const [task, setTask] = useState('')
-  const [todo, setTodo] = useState([])
+  const [todos, setTodos] = useState([])
   const [error, setError] = useState('')
+
+
+  useEffect(() => {
+    const todoItem = JSON.parse(localStorage.getItem('todoList')) || []
+    setTodos(todoItem)
+  },[])
+
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -22,8 +29,8 @@ const MainComponent = () => {
         id: Math.floor(Math.random() * 9999999) + 1,
         task
       };
-      const updateTodoList = [...todo, todoData]
-      setTodo(updateTodoList);
+      const updateTodoList = [...todos, todoData]
+      setTodos(updateTodoList);
       setTask('')
       localStorage.setItem('todoList', JSON.stringify(updateTodoList))
       setError('')
@@ -58,7 +65,7 @@ const MainComponent = () => {
         </form>
       </div>
 
-      <TaskListComponent />
+      <TaskListComponent todos={todos} setTodos={setTodos}/>
 
 
 

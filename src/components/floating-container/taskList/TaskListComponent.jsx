@@ -1,11 +1,18 @@
 import React from 'react'
 
-const TaskListComponent = () => {
-  return (
-    <div>
-      TaskListComponent
-    </div>
-  )
+const TaskListComponent = ({ todos, setTodos }) => {
+
+    return (
+        <div className='taskList'>
+            <ul>
+                {todos.map((todo) => {
+                    return (
+                        <li key={todo.id}>{todo.task}</li>
+                    )
+                })}
+            </ul>
+        </div>
+    )
 }
 
 export default TaskListComponent
