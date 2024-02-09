@@ -1,9 +1,14 @@
 @import '../../style/variable';
+@import '../../style/media';
 
 .taskList_container {
     margin-top: 2rem;
     border-radius: 5px;
 
+    
+    @include laptop{
+        position: relative;
+    }
 
     ul {
         list-style: none;
