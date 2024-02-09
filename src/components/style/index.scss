@@ -96,6 +96,17 @@ body {
                 cursor: pointer;
             }
         }
+
+
+        .filter-container{    
+            p{
+                color: $VeryDarkDesaturatedBlue;
+            }
+            
+            button{
+                color: $VeryDarkDesaturatedBlue;
+            }
+        }
     }
 
     .dark {
@@ -142,5 +153,17 @@ body {
                 border: 1px solid $LightGrayishBlue;
             }
         } 
+
+        .filter-container{
+        
+            
+            p{
+                color: $LightGrayishBlue;
+            }
+            
+            button{
+                color: $LightGrayishBlue;
+            }
+        }
     }
 }

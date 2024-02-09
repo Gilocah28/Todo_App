@@ -1,9 +1,45 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import iconCross from '../../../assets/icon-cross.svg'
 import check from '../../../assets/icon-check.svg'
 import '../taskList/taskListStyle.scss'
+import FilterComponent from '../Filter-container/FilterComponent'
+import FncComponent from '../Filter-container/FncComponent'
 
-const TaskListComponent = ({ todos, setTodos, filter }) => {
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'Active': {
+            return { value: state.value = true }
+        }
+        case 'Complete': {
+            return { value: state.value = false }
+        }
+        case 'All': {
+            return { value: state.value = 'all' }
+        }
+        default: {
+            return state
+        }
+    }
+}
+
+
+
+const TaskListComponent = ({ todos, setTodos }) => {
+    const initialState = { value: null }
+    const [state, dispatch] = useReducer(reducer, initialState)
+
+    const handleAll = () => {
+        dispatch({ type: 'All' })
+    }
+
+    const handleActive = () => {
+        dispatch({ type: 'Active' })
+    }
+
+    const handleComplete = () => {
+        dispatch({ type: 'Complete' })
+    }
 
     const handleRemove = (id) => {
         const filteredItem = todos.filter((todo) => {
@@ -32,9 +68,10 @@ const TaskListComponent = ({ todos, setTodos, filter }) => {
 
     return (
         <div className='taskList_container'>
+            
             <ul>
-                {todos.filter((todo) =>{
-                    return todo.status !== filter
+                {todos.filter((todo) => {
+                    return todo.status !== state.value
                 }).map((todo) => {
                     return (
                         <li className='list-items' key={todo.id}>
@@ -69,6 +106,8 @@ const TaskListComponent = ({ todos, setTodos, filter }) => {
                     )
                 })}
             </ul>
+
+            <FncComponent todos={todos} handleActive={handleActive} handleAll={handleAll} handleComplete={handleComplete}/>
         </div>
     )
 }

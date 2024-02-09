@@ -1,11 +1,12 @@
 import React from 'react'
 
-const FilterComponent = ({ todos, handleAll, handleComplete, handleActive }) => {
-
+const FncComponent = ({ todos, handleAll, handleComplete, handleActive }) => {
 
     const itemCount = todos.filter((todos) => !todos.status).length
+
     return (
-        <div>
+
+        <div className='filter-container'>
             <div className="total_container">
                 <p>{itemCount > 0 ? `${itemCount} items left` : 'No items left'}</p>
             </div>
@@ -16,8 +17,13 @@ const FilterComponent = ({ todos, handleAll, handleComplete, handleActive }) => 
                 <button onClick={() => handleComplete()}>Completed</button>
             </div>
 
+            <div className="clr-container">
+                <button>Clear Completed</button>
+            </div>
+
         </div>
+
     )
 }
 
-export default FilterComponent
+export default FncComponent

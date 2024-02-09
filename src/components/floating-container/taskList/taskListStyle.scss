@@ -1,15 +1,16 @@
 @import '../../style/variable';
 
-.taskList_container{
-    border-radius: 5px;
+.taskList_container {
     margin-top: 2rem;
-    overflow: auto;
-    max-height: 320px;
+    border-radius: 5px;
 
-    ul{
+
+    ul {
         list-style: none;
+        overflow: auto;
+        max-height: 320px;
 
-        .list-items{
+        .list-items {
             border-bottom: 1px solid $DarkGrayishBlue;
             display: flex;
             justify-content: space-between;
@@ -17,17 +18,17 @@
             height: 60px;
             padding: 0 1rem;
 
-            .item-group{
+            .item-group {
                 display: flex;
                 align-items: center;
                 gap: 2rem;
 
-                .check-container{
-                    .check-input{
+                .check-container {
+                    .check-input {
                         display: none;
                     }
 
-                    .checkbox{
+                    .checkbox {
                         width: 25px;
                         height: 25px;
                         border-radius: 50%;
@@ -40,35 +41,35 @@
                     }
 
 
-                    .check-input:checked + .checkbox{
-                        background: linear-gradient(90deg, rgba(36,202,244,1) 0%, rgba(177,66,226,1) 98%);
+                    .check-input:checked+.checkbox {
+                        background: linear-gradient(90deg, rgba(36, 202, 244, 1) 0%, rgba(177, 66, 226, 1) 98%);
                         border: none;
                     }
-                } 
-
-                .item{
-                    cursor: pointer;
-                    
                 }
 
-                .item_line{
+                .item {
+                    cursor: pointer;
+
+                }
+
+                .item_line {
                     opacity: .8;
                     cursor: pointer;
                 }
             }
 
-            .remove{
+            .remove {
                 background: transparent;
                 border: none;
                 outline: none;
 
 
-                &:hover{
+                &:hover {
                     cursor: pointer;
                 }
             }
-            
-           
+
+
 
         }
     }
