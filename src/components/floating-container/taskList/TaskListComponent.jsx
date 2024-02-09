@@ -3,7 +3,7 @@ import iconCross from '../../../assets/icon-cross.svg'
 import check from '../../../assets/icon-check.svg'
 import '../taskList/taskListStyle.scss'
 import FilterComponent from '../Filter-container/FilterComponent'
-import FncComponent from '../Filter-container/FncComponent'
+
 
 
 const reducer = (state, action) => {
@@ -66,9 +66,11 @@ const TaskListComponent = ({ todos, setTodos }) => {
         localStorage.setItem('todoList', JSON.stringify(updateStatus))
     }
 
+
+
     return (
         <div className='taskList_container'>
-            
+
             <ul>
                 {todos.filter((todo) => {
                     return todo.status !== state.value
@@ -107,7 +109,14 @@ const TaskListComponent = ({ todos, setTodos }) => {
                 })}
             </ul>
 
-            <FncComponent todos={todos} handleActive={handleActive} handleAll={handleAll} handleComplete={handleComplete}/>
+            <FilterComponent
+                handleAll={handleAll}
+                handleActive={handleActive}
+                handleComplete={handleComplete}
+                todos={todos}
+                setTodos={setTodos}
+            />
+
         </div>
     )
 }
