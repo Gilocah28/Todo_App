@@ -121,6 +121,7 @@ const MainComponent = () => {
         handleAll={handleAll}
         handleActive={handleActive}
         handleComplete={handleComplete}
+        todos={todos}
       />
 
 
