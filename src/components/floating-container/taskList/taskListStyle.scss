@@ -1,0 +1,70 @@
+@import '../../style/variable';
+
+.taskList_container{
+    border-radius: 5px;
+    margin-top: 2rem;
+    overflow: auto;
+    height: 300px;
+
+    ul{
+        list-style: none;
+
+        .list-items{
+            border-bottom: 1px solid $DarkGrayishBlue;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            padding: 0 1rem;
+
+            .item-group{
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+
+                .check-container{
+                    .check-input{
+                        display: none;
+                    }
+
+                    .checkbox{
+                        width: 25px;
+                        height: 25px;
+                        border: 1px solid wheat;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        padding: .3rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: all 200ms linear;
+                    }
+
+
+                    .check-input:checked + .checkbox{
+                        background: linear-gradient(90deg, rgba(36,202,244,1) 0%, rgba(177,66,226,1) 98%);
+                        border: none;
+                    }
+                } 
+
+                .item{
+                    cursor: pointer;
+                }
+            }
+
+            .remove{
+                background: transparent;
+                border: none;
+                outline: none;
+
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            
+           
+
+        }
+    }
+}
