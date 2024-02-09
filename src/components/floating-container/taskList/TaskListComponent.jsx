@@ -2,7 +2,6 @@ import React, { useReducer } from 'react'
 import iconCross from '../../../assets/icon-cross.svg'
 import check from '../../../assets/icon-check.svg'
 import '../taskList/taskListStyle.scss'
-import FilterComponent from '../Filter-container/FilterComponent'
 
 
 
