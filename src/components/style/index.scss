@@ -91,7 +91,7 @@ body {
             }
 
             .item_line{
-                text-decoration: line-through;
+                text-decoration: line-through solid 2px $VeryDarkDesaturatedBlue;
                 opacity: .8;
                 cursor: pointer;
             }
@@ -131,7 +131,7 @@ body {
         .item_line{
             opacity: .8;
             cursor: pointer;
-
+            text-decoration: line-through solid 2px white;
             p{
                 color: $LightGrayishBlue;
             }

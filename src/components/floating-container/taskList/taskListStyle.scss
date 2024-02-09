@@ -4,7 +4,7 @@
     border-radius: 5px;
     margin-top: 2rem;
     overflow: auto;
-    max-height: 300px;
+    max-height: 320px;
 
     ul{
         list-style: none;
@@ -36,7 +36,7 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        transition: all 200ms linear;
+                        transition: all 400ms ease-in-out;
                     }
 
 
@@ -52,7 +52,6 @@
                 }
 
                 .item_line{
-                    text-decoration: line-through;
                     opacity: .8;
                     cursor: pointer;
                 }

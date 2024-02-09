@@ -3,7 +3,7 @@ import iconCross from '../../../assets/icon-cross.svg'
 import check from '../../../assets/icon-check.svg'
 import '../taskList/taskListStyle.scss'
 
-const TaskListComponent = ({ todos, setTodos }) => {
+const TaskListComponent = ({ todos, setTodos, filter }) => {
 
     const handleRemove = (id) => {
         const filteredItem = todos.filter((todo) => {
@@ -33,7 +33,9 @@ const TaskListComponent = ({ todos, setTodos }) => {
     return (
         <div className='taskList_container'>
             <ul>
-                {todos.map((todo) => {
+                {todos.filter((todo) =>{
+                    return todo.status !== filter
+                }).map((todo) => {
                     return (
                         <li className='list-items' key={todo.id}>
                             <div className="item-group">
@@ -47,7 +49,8 @@ const TaskListComponent = ({ todos, setTodos }) => {
                                     />
 
                                     <label for={todo.id} className='checkbox'>
-                                        {todo.status && <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6" /></svg>}
+                                        {todo.status && <img src={check} alt="Check" />}
+
                                     </label>
                                 </div>
 
