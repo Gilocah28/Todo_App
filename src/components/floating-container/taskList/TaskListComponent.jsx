@@ -117,13 +117,6 @@ const TaskListComponent = ({ todos, setTodos }) => {
                 })}
             </ul>
 
-            {/* <FilterComponent
-                handleAll={handleAll}
-                handleActive={handleActive}
-                handleComplete={handleComplete}
-                todos={todos}
-                setTodos={setTodos}
-            /> */}
 
             <div className="filter-container">
                 <div className="total-container">
