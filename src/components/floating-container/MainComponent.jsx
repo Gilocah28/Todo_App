@@ -27,8 +27,11 @@ const MainComponent = () => {
 
       const todoData = {
         id: Math.floor(Math.random() * 9999999) + 1,
-        task
+        task,
+        status: false
       };
+
+      
       const updateTodoList = [...todos, todoData]
       setTodos(updateTodoList);
       setTask('')

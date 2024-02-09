@@ -56,6 +56,46 @@ body {
             background: $VeryLightGray;
             box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.49);
         }
+
+        .item{
+            cursor: pointer;
+            p{
+                color: $VeryDarkDesaturatedBlue;
+            }
+        }
+
+        .item_line{
+            text-decoration: line-through;
+            opacity: .8;
+            cursor: pointer;
+
+            p{
+                color: $VeryDarkDesaturatedBlue;
+            }
+        }
+
+        .item-group{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            .check-container{
+                .checkbox{
+                    border: 1px solid $VeryDarkDesaturatedBlue;
+                }
+            } 
+
+            .item{
+                cursor: pointer;
+                
+            }
+
+            .item_line{
+                text-decoration: line-through;
+                opacity: .8;
+                cursor: pointer;
+            }
+        }
     }
 
     .dark {
@@ -80,5 +120,27 @@ body {
         .taskList_container{
             background-color: $VeryDarkDesaturatedBlue;
         }
+
+        .item{
+            cursor: pointer;
+            p{
+                color: $LightGrayishBlue;
+            }
+        }
+
+        .item_line{
+            opacity: .8;
+            cursor: pointer;
+
+            p{
+                color: $LightGrayishBlue;
+            }
+        }
+
+        .check-container{
+            .checkbox{
+                border: 1px solid $LightGrayishBlue;
+            }
+        } 
     }
 }

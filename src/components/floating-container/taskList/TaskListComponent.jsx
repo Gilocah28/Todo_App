@@ -14,6 +14,22 @@ const TaskListComponent = ({ todos, setTodos }) => {
         localStorage.setItem('todoList', JSON.stringify(filteredItem))
     }
 
+
+    const handleCheck = (id) => {
+        const updateStatus = todos.map((todo) => {
+            if (todo.id === id) {
+                return {
+                    ...todo,
+                    status: !todo.status
+                }
+            }
+            return todo
+        })
+
+        setTodos(updateStatus)
+        localStorage.setItem('todoList', JSON.stringify(updateStatus))
+    }
+
     return (
         <div className='taskList_container'>
             <ul>
@@ -26,16 +42,18 @@ const TaskListComponent = ({ todos, setTodos }) => {
                                         type="checkbox"
                                         id={todo.id}
                                         className='check-input'
+                                        checked={todo.status}
+                                        onClick={() => handleCheck(todo.id)}
                                     />
 
                                     <label for={todo.id} className='checkbox'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6" /></svg>
+                                        {todo.status && <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6" /></svg>}
                                     </label>
                                 </div>
 
 
-                                <div className='item'>
-                                    {todo.task}
+                                <div className={todo.status ? 'item_line' : 'item'}>
+                                    <p>{todo.task}</p>
                                 </div>
                             </div>
                             <button
