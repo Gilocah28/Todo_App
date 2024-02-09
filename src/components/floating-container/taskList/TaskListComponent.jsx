@@ -2,6 +2,7 @@ import React, { useReducer } from 'react'
 import iconCross from '../../../assets/icon-cross.svg'
 import check from '../../../assets/icon-check.svg'
 import '../taskList/taskListStyle.scss'
+import '../Filter-container/filterStyle.scss'
 
 
 
@@ -65,6 +66,14 @@ const TaskListComponent = ({ todos, setTodos }) => {
         localStorage.setItem('todoList', JSON.stringify(updateStatus))
     }
 
+    const itemCount = todos.filter(todo => !todo.status).length
+
+    const handleClearComplete = () => {
+        const updateTodos = todos.filter((todos) => !todos.status)
+        setTodos(updateTodos)
+        localStorage.setItem('todoList', JSON.stringify(updateTodos))
+    }
+
 
 
     return (
@@ -108,13 +117,30 @@ const TaskListComponent = ({ todos, setTodos }) => {
                 })}
             </ul>
 
-            <FilterComponent
+            {/* <FilterComponent
                 handleAll={handleAll}
                 handleActive={handleActive}
                 handleComplete={handleComplete}
                 todos={todos}
                 setTodos={setTodos}
-            />
+            /> */}
+
+            <div className="filter-container">
+                <div className="total-container">
+                    <p>{itemCount > 0 ? `${itemCount} items left` : 'No items left'}</p>
+                </div>
+
+                <div className="filter-buttons">
+                    <button onClick={handleAll}>All</button>
+                    <button onClick={handleActive}>Active</button>
+                    <button onClick={handleComplete}>Completed</button>
+                </div>
+
+                <div className="btn-container">
+                    <button onClick={handleClearComplete}>Clear Complete</button>
+                </div>
+
+            </div>
 
         </div>
     )
